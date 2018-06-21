@@ -1,0 +1,47 @@
+
+resource "aws_db_parameter_group" "default" {
+  name   = "rds-pg"
+  family = "aurora5.6"
+
+#  parameter {
+#    name  = "character_set_server"
+#    value = "utf8"
+#  }
+
+#  parameter {
+#    name  = "character_set_client"
+#    value = "utf8"
+#  }
+
+  parameter {
+    name  = "max_connect_errors"
+    value = "999999"
+  }
+
+}
+
+# RDS Parameter Group
+#resource "aws_rds_cluster_parameter_group" "automation-para-group" {
+#  name        = "automation-para-group"
+#  family      = "aurora5.6"
+#  type 	      = "DB Parameter Group"	
+#  description = "Automation RDS cluster parameter group"
+
+#  parameter {
+#    name  = "character_set_server"
+#    value = "utf8"
+#  }
+
+#  parameter {
+#    name  = "character_set_client"
+#    value = "utf8"
+#  }
+
+#  parameter {
+#    name  = "max_connect_errors"
+#    value = "999999"
+#  }
+
+
+
+
