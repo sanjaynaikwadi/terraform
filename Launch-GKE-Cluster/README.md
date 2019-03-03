@@ -42,7 +42,8 @@ gcloud projects add-iam-policy-binding kthw-230018 \
  - google.tf 
 
 `variable.tf` - Define Region/Zone/Project/Machine-type
-```bash
+
+```tf
 variable "region" {
     description = "The GCloud default region to use."
     default = "us-west1"
