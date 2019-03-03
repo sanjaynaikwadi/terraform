@@ -5,7 +5,7 @@
  - Create Project in Gcloud
  - Enable Kubernetes API for that project
 
-# Part 1 - Getting user/service account on gcp
+# Part 1 - Getting user/service account on gcp for terraform to work
  
 ### Get Project List
 ```bash
@@ -54,24 +54,25 @@ variable "zone" {
 }
 
 variable "project" {
-    description = "The GCloud default zone to use."
+    description = "The GCloud default project to use."
     default = "kthw-230018"
 }
 
 variable "pool_name" {
-    description = "The GCloud default zone to use."
+    description = "The GCloud default pool name to use."
     default = "primary-pool"
 }
 
 variable "machine_type" {
-    description = "The GCloud default zone to use."
+    description = "The GCloud default machine type to use."
     default = "n1-standard-1"
 }
 
 ```
 
-`google.tf` - Define provide, credentials (key which we created previously), cluster name / node pool name & count
-```bash
+`google.tf` - Define provider, credentials (key which we created previously), cluster name / node pool name & count.
+
+```tf
 provider "google" {
   credentials = "${file("terraform-account-key.json")}"
   project     = "${var.project}"
@@ -103,7 +104,7 @@ resource "google_container_node_pool" "pool-1" {
 
  - Lets run the terraform 
 
-```
+```bash
 terraform init
 terraform plan
 terraform apply 
@@ -111,7 +112,7 @@ terraform apply
 
  - Once your cluster is up you can get the credentials and set you kubectl to poin that cluster
 
-```
+```bash
 gcloud container clusters get-credentials core-cluster-1
 ```
 
