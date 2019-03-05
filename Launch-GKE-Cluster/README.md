@@ -7,7 +7,10 @@
  - Enable Kubernetes API for that project
 
 # Part 1 - Getting user/service account on gcp for terraform to work
- 
+
+ - Assuming that you have run `gcloud init` and set the project/zone/region/
+ - I have created a project name `kthw` 
+
 ### Get Project List
 ```bash
 gcloud projects list
