@@ -1,6 +1,7 @@
 # How to create GKE cluster and node pool with terraform
 
 ### Pre-requiste
+ - Terraform installed
  - Google SDK installed 
  - Create Project in Gcloud
  - Enable Kubernetes API for that project
@@ -117,4 +118,11 @@ terraform apply
 gcloud container clusters get-credentials core-cluster-1
 ```
 
-Hola !!! You cluster is up and running go ahead and play around it. 
+# Part - 3 - Destroy the setup
+
+ - Once your done with your testing you can easily tear down the setup, run the following command 
+```bash
+terraform destroy
+``` 
+
+### Hola !!! You cluster is up and running - Enjoy you kuberneting  
